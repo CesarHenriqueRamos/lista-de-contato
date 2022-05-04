@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('rg');
             $table->string('cpf');
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('whatsapp')->nullable();
         });
     }
 

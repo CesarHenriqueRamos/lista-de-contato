@@ -22,16 +22,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //gets
 Route::get('/',[UserController::class, 'getUserAll']);
 Route::get('/{id}',[UserController::class, 'getUser']);
-Route::get('/contact/{id}',[ContactController::class, 'getContact']);
+
 
 //Post
 Route::post('/createUser',[UserController::class, 'createUser']);
-Route::post('/createContact',[ContactController::class, 'createContact']);
+
 
 //Put
 Route::put('/updateUser/{id}',[UserController::class, 'updateUser']);
-Route::put('/updateContact/{id}',[ContactController::class, 'updateContact']);
+
 
 //Delete
 Route::delete('/deleteUser/{id}',[UserController::class, 'deleteUser']);
-Route::delete('/deleteContact/{id}',[ContactController::class, 'deleteContact']);
