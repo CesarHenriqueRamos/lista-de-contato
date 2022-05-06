@@ -1,0 +1,20 @@
+.body{
+    height: 80vh;
+    display: flex;
+    background-color: #041a169c;
+}
+.icon,.information{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.information p{
+    padding:  0 10px;
+}
+h2,p{
+    color: white;
+    padding: 10px;
+}
