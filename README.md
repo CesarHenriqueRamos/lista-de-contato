@@ -6,7 +6,7 @@
     <li>npm</li>
   </ul>
   <p>cd api</p>
-  <p>npm install</p>
+  <p>composer install</p>
   <h4>Para rodar o a API </h4>
   <p>php artisan serve</p> 
 
