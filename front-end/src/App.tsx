@@ -1,8 +1,9 @@
 import './app.css';
 import {  Route,  Link, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import User from './pages/User';
-import CreateUser from './pages/CreateUser';
+import { User } from './pages/User';
+import { CreateUser } from './pages/CreateUser';
+import { UpdateUser } from './pages/UpdateUser';
 
 let linguagePT = {
   title:'Contatos',
@@ -45,6 +46,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/list' element={<User />} />  
             <Route path='/create' element={<CreateUser />} />
+            <Route path='/update/:id' element={<UpdateUser />} />
           </Routes>
         </div>
         <footer>

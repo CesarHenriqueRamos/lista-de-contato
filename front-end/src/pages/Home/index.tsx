@@ -7,7 +7,7 @@ import {
 
 const Home = () => {
     return(
-        <div className='body'>
+        <div className='bodyList'>
             <div className='icon'>
                 <FontAwesomeIcon icon={faAddressBook} size="8x" color="#040f0ee1" />
             </div>

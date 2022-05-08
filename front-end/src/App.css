@@ -6,12 +6,16 @@
 a{
     text-decoration: none;
 }
+body{
+    height: 100%;
+}
 header{
     background-color: #051815;
     padding: 10px;
     display: flex;
     padding: 10px 2%;
     height: 10vh;
+    min-height: 60px;
 }
 header h1{
     color: white;
@@ -51,11 +55,16 @@ header nav ul li a:hover{
 footer{
     background-color: #051815;
     padding: 10px;
-    color: white;
     height: 10vh;
     text-align: center;
-    
+    min-height: 60px;
 }
 footer p{
     padding-top: 10px;
+    color: white;
+}
+
+.body{
+
+    background-color: #041a169c;
 }

@@ -1,5 +1,48 @@
+
 .body{
-    height: 80vh;
+    min-height: 80vh;
+}
+.groupCards,.title{
+    
     display: flex;
-    background-color: #041a169c;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.title{
+    margin-bottom: 5px;
+}
+.card{
+    width: 400px;
+    background-color: white;
+    height: 300px;
+    margin: 5px 20%;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+p{
+    color: black;
+    font-size: 14px;
+}
+.dataPeaple,.contact{
+    border: 1px solid #ccc;
+    padding: 2px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+}
+button{
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    color: white;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+}
+.red{
+    background-color: red;
+    
+}
+.green{
+    background-color: green;
 }

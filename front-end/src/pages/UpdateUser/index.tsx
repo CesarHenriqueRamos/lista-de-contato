@@ -1,8 +1,10 @@
 
-import { useState } from 'react';
+import React ,{ useState } from 'react';
 import './style.css';
 import { api } from '../../api';
-export const CreateUser = () => {
+import { useParams,useNavigate } from 'react-router-dom';
+
+export const UpdateUser = () => {
 
     const [firstName, setFirtName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -11,8 +13,25 @@ export const CreateUser = () => {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
     const [whats, setWhats] = useState('');
+    const { id } = useParams();
+    const navegate = useNavigate();
+    var idUser:string = (id) ? id : '';
+    
+    const selectUserOne = async () => {
+        let response = await api.selectUserOne(idUser);
+            if(response.error === ""){
+                setFirtName(response.list_item.first_name);
+                setLastName(response.list_item.last_name);
+                setCpf(response.list_item.cpf);
+                setRg(response.list_item.rg);
+                setPhone(response.list_item.phone);
+                setEmail(response.list_item.email);
+                setWhats(response.list_item.whatsapp);
+            }
+    }
+    
 
-    const createUser = async (e:React.FormEvent) => {
+    const update = async (e:React.FormEvent) => {
         e.preventDefault();
         let body = {
             'first_name': firstName,
@@ -23,7 +42,9 @@ export const CreateUser = () => {
             'email':email,
             'whatsapp':whats
         }
-        let response = await api.createUser(body);
+
+
+        let response = await api.updateUser(idUser,body);
             if(response.error === ""){
                 setFirtName('');
                 setLastName('');
@@ -33,12 +54,17 @@ export const CreateUser = () => {
                 setEmail('');
                 setWhats('');
             }
+            navegate('/list');
         
     }
+    
+    React.useEffect(() =>{        
+        selectUserOne();
+    },[]);
     return(
         <div className='body'>
             <div className='title'>
-                <h2>Novo Contato</h2>               
+                <h2>Atualizando Contato</h2>               
             </div>
             <div className='formGroup'>
                 <div className='form'>
@@ -102,11 +128,10 @@ export const CreateUser = () => {
                     </div>
                     <div className='groupItem'>
                         {/* <input type="submit" value="Adicionar" /> */}
-                        <button onClick={createUser} className="submit">Adicionar</button>
+                        <button onClick={update} className="submit">Atualizar</button>
                     </div>
                 </div>
             </div>
         </div>
     )
 }
-
